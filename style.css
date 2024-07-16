@@ -25,3 +25,6 @@ body{
     height: 46px;
     border: solid black 2px;
 }
+.square:hover{
+    background-color: red;
+}
