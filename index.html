@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button class="btn-open-popup" onclick="togglePopup()"> 
+        New Grid
+        </button> 
+    
+      <div id="popupOverlay" 
+           class="overlay-container"> 
+          <div class="popup-box"> 
+              <h2 style="color: green;">Grid Resolution</h2> 
+              <input type="number" id="size-input" value="16">
+
+              <button class="btn-submit" 
+                        type="submit" onclick="newGrid()"> 
+                  Submit 
+                  </button> 
+
+              <button class="btn-close-popup" 
+                      onclick="togglePopup()"> 
+                Close 
+                </button> 
+          </div> 
+      </div> 
+
     <div id="grid"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
