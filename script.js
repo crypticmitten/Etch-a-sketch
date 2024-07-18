@@ -18,10 +18,16 @@ document.addEventListener("mousemove",checkHover);
 
 function checkHover(){
     document.querySelectorAll(":hover").forEach(function(Square){
-        if (Square.classList.contains("square")){
-            Square.style.backgroundColor = getRandomColour();
+        if (Square.classList.contains("square") && !Square.classList.contains("hovered")){
+            let opacity = Square.style.opacity;
+            opacity = (0.1+ Number(opacity));
+            Square.style.opacity = opacity;
+            Square.classList.add("hovered");
         }
     });
+    document.querySelectorAll(":not(:hover)").forEach(function(Square){
+        Square.classList.remove("hovered");
+    })
 }
 
 function newGrid(){
@@ -43,8 +49,3 @@ function togglePopup() {
     const overlay = document.getElementById('popupOverlay'); 
     overlay.classList.toggle('show'); 
 } 
-
-function getRandomColour(){
-    let o = Math.round, r=Math.random, s=255;
-    return "rgb(" + o(r()*s) + "," + o(r()*s) + "," +o(r()*s)+")";
-}
