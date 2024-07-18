@@ -26,6 +26,7 @@ function checkHover(){
 
 function newGrid(){
     let size = document.getElementById("size-input").value;
+    size = size<100?size:100
     console.log(size);
     togglePopup();
     deleteGrid();
