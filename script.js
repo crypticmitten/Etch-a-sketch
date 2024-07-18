@@ -19,7 +19,7 @@ document.addEventListener("mousemove",checkHover);
 function checkHover(){
     document.querySelectorAll(":hover").forEach(function(Square){
         if (Square.classList.contains("square")){
-            Square.style.backgroundColor = "red";
+            Square.style.backgroundColor = getRandomColour();
         }
     });
 }
@@ -43,3 +43,8 @@ function togglePopup() {
     const overlay = document.getElementById('popupOverlay'); 
     overlay.classList.toggle('show'); 
 } 
+
+function getRandomColour(){
+    let o = Math.round, r=Math.random, s=255;
+    return "rgb(" + o(r()*s) + "," + o(r()*s) + "," +o(r()*s)+")";
+}
